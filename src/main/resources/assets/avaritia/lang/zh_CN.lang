@@ -25,11 +25,6 @@ item.singularity.tin.name=奇点-锡
 item.singularity.lead.name=奇点-铅
 item.singularity.silver.name=奇点-银
 item.singularity.nickel.name=奇点-镍
-item.singularity.diamond.name=奇点-钻石
-item.singularity.emerald.name=奇点-绿宝石
-item.singularity.fluxed.name=奇点-充能琥珀金
-item.singularity.platinum.name=奇点-铂
-item.singularity.iridium.name=奇点-铱
 #
 # Tools
 item.avaritia:infinity_pickaxe.name=世界崩解之镐
@@ -50,7 +45,6 @@ item.avaritia:infinity_boots.name=无尽靴子
 item.avaritia:endest_pearl.name=终望珍珠
 item.avaritia:cosmic_meatballs.name=寰宇肉丸
 item.avaritia:ultimate_stew.name=超级煲
-item.avaritia:cosmic_meatballs.name=寰宇肉丸
 item.avaritia_fracturedore.name=未知破碎矿石
 item.avaritia_fracturedore.prefix=破碎
 item.avaritia:matter_cluster.name=物质团

@@ -14,6 +14,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.inventory.EntityEquipmentSlot.Type;
 import net.minecraft.item.Item;
@@ -46,9 +47,9 @@ import java.util.*;
 
 public class AvaritiaEventHandler {
 
-    private static Map<Integer, List<AEOCrawlerTask>> crawlerTasks = new HashMap<>();
+    private static final Map<Integer, List<AEOCrawlerTask>> crawlerTasks = new HashMap<>();
 
-    private static Set<ItemStack> capturedDrops = new LinkedHashSet<>();
+    private static final Set<ItemStack> capturedDrops = new LinkedHashSet<>();
     private static boolean doItemCapture = false;
 
     //These are defaults, loaded from config.
@@ -122,6 +123,14 @@ public class AvaritiaEventHandler {
                     }
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlayerTick(TickEvent.PlayerTickEvent event) {
+        if (event.phase == TickEvent.Phase.END) {
+            if(event.player.getCooldownTracker().hasCooldown(ModItems.infinity_sword))
+                event.player.getCooldownTracker().setCooldown(ModItems.infinity_sword, 0);
         }
     }
 
@@ -204,7 +213,7 @@ public class AvaritiaEventHandler {
         if (event.getItemStack().getItem() instanceof ItemSwordInfinity) {
             for (int x = 0; x < event.getToolTip().size(); x++) {
                 if (event.getToolTip().get(x).contains(I18n.translateToLocal("attribute.name.generic.attackDamage")) || event.getToolTip().get(x).contains(I18n.translateToLocal("Attack Damage"))) {
-                    event.getToolTip().set(x, TextFormatting.BLUE + "+" + TextUtils.makeFabulous(I18n.translateToLocal("tip.infinity")) + " " + TextFormatting.BLUE + I18n.translateToLocal("attribute.name.generic.attackDamage"));
+                    event.getToolTip().set(x, " " + TextUtils.makeFabulous(I18n.translateToLocal("tip.infinity")) + " " + TextFormatting.GRAY + I18n.translateToLocal("attribute.name.generic.attackDamage"));
                     return;
                 }
             }
@@ -217,8 +226,10 @@ public class AvaritiaEventHandler {
             return;
         }
         EntityPlayer player = (EntityPlayer) event.getEntityLiving();
-        if (!player.getHeldItemMainhand().isEmpty() && player.getHeldItemMainhand().getItem() == ModItems.infinity_sword && player.isHandActive()) {//TODO Blocking? Maybe add a shield?
-            event.setCanceled(true);
+        for (EnumHand enumhand : EnumHand.values()) {
+            if (!player.getHeldItem(enumhand).isEmpty() && player.getHeldItem(enumhand).getItem() == ModItems.infinity_sword && player.isHandActive()) {
+                event.setCanceled(true);
+            }
         }
         if (isInfinite(player) && !event.getSource().damageType.equals("infinity")) {
             event.setCanceled(true);

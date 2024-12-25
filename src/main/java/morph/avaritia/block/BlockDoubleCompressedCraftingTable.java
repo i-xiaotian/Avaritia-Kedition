@@ -23,7 +23,7 @@ public class BlockDoubleCompressedCraftingTable extends Block implements IModelR
     public BlockDoubleCompressedCraftingTable() {
         super(Material.WOOD);
         setHardness(20F);
-        setUnlocalizedName("avaritia:double_compressed_crafting_table");
+        setTranslationKey("avaritia:double_compressed_crafting_table");
         setSoundType(SoundType.WOOD);
         setHarvestLevel("axe", 1);
         setCreativeTab(Avaritia.tab);

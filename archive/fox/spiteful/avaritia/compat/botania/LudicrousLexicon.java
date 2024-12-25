@@ -15,7 +15,7 @@ public class LudicrousLexicon extends LexiconEntry implements IAddonEntry {
         return "[Avaritia]";
     }
     @Override
-    public String getUnlocalizedName() {
-        return "avaritia.lexicon." + super.getUnlocalizedName();
+    public String getTranslationKey() {
+        return "avaritia.lexicon." + super.getTranslationKey();
     }
 }

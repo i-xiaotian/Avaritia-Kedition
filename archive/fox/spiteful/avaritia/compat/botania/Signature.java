@@ -19,7 +19,7 @@ public class Signature extends SubTileSignature {
         return icon;
     }
     @Override
-    public String getUnlocalizedNameForStack(ItemStack item){
+    public String getTranslationKeyForStack(ItemStack item){
         return "avaritia.flower." + name;
     }
     @Override

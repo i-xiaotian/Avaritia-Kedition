@@ -135,7 +135,7 @@ public class LatticeModelCreator {
                     builder.put(e, (float) vec.x, (float) vec.y, (float) vec.z, 1);
                     break;
                 case NORMAL:
-                    builder.put(e, face.getFrontOffsetX(), face.getFrontOffsetY(), face.getFrontOffsetZ(), 0);
+                    builder.put(e, face.getXOffset(), face.getYOffset(), face.getZOffset(), 0);
                     break;
                 case COLOR:
                     builder.put(e, (colour.r & 0xFF) / 255F, (colour.g & 0xFF) / 255F, (colour.b & 0xFF) / 255F, (colour.a & 0xFF) / 255F);

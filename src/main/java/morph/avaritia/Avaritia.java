@@ -2,6 +2,7 @@ package morph.avaritia;
 
 import codechicken.lib.CodeChickenLib;
 import codechicken.lib.gui.SimpleCreativeTab;
+import morph.avaritia.compat.Compat;
 import morph.avaritia.init.FoodRecipes;
 import morph.avaritia.init.ModBlocks;
 import morph.avaritia.init.ModItems;
@@ -24,12 +25,16 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import static morph.avaritia.Avaritia.*;
 
-@Mod (modid = MOD_ID, name = MOD_NAME, version = MOD_VERSION, acceptedMinecraftVersions = CodeChickenLib.MC_VERSION_DEP, dependencies = DEPENDENCIES)
+@Mod (modid = MOD_ID,
+        name = MOD_NAME,
+        version = MOD_VERSION,
+        acceptedMinecraftVersions = CodeChickenLib.MC_VERSION_DEP,
+        dependencies = DEPENDENCIES + "after:thaumcraft;after:bloodmagic;after:botania")
 public class Avaritia {
 
     public static final String MOD_ID = "avaritia";
     public static final String MOD_NAME = "Avaritia";
-    public static final String MOD_VERSION = "${mod_version}";
+    public static final String MOD_VERSION = "3.4.0";
     public static final String DEPENDENCIES = "" + CodeChickenLib.MOD_VERSION_DEP;
 
     public static CreativeTabs tab = new SimpleCreativeTab(MOD_ID, "avaritia:resource", 5);
@@ -70,5 +75,4 @@ public class Avaritia {
         AvaritiaRecipeManager.init();
         FoodRecipes.initFoodRecipes();
     }
-
 }

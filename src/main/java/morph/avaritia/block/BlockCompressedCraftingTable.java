@@ -23,7 +23,7 @@ public class BlockCompressedCraftingTable extends Block implements IModelRegiste
     public BlockCompressedCraftingTable() {
         super(Material.WOOD);
         setHardness(4.0F);
-        setUnlocalizedName("avaritia:compressed_crafting_table");
+        setTranslationKey("avaritia:compressed_crafting_table");
         setSoundType(SoundType.WOOD);
         setCreativeTab(Avaritia.tab);
         setRegistryName("compressed_crafting_table");

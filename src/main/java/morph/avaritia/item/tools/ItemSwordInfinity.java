@@ -17,16 +17,15 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumRarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.util.EntityDamageSource;
-import net.minecraft.util.EnumHand;
+import net.minecraft.item.*;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 public class ItemSwordInfinity extends ItemSword implements ICosmicRenderItem, IModelRegister {
 
@@ -36,9 +35,14 @@ public class ItemSwordInfinity extends ItemSword implements ICosmicRenderItem, I
 
     public ItemSwordInfinity() {
         super(TOOL_MATERIAL);
-        setUnlocalizedName("avaritia:infinity_sword");
+        setTranslationKey("avaritia:infinity_sword");
         setRegistryName("infinity_sword");
         setCreativeTab(Avaritia.tab);
+    }
+
+    public boolean canDisableShield(ItemStack stack, ItemStack shield, EntityLivingBase entity, EntityLivingBase attacker)
+    {
+        return true;
     }
 
     @Override
@@ -144,7 +148,7 @@ public class ItemSwordInfinity extends ItemSword implements ICosmicRenderItem, I
     @SideOnly (Side.CLIENT)
     public void registerModels() {
         ModelResourceLocation sword = new ModelResourceLocation("avaritia:tools", "type=infinity_sword");
-        ModelLoader.registerItemVariants(ModItems.infinity_pickaxe, sword);
+        ModelLoader.registerItemVariants(ModItems.infinity_sword, sword);
         IBakedModel wrapped = new CosmicItemRender(TransformUtils.DEFAULT_TOOL, modelRegistry -> modelRegistry.getObject(sword));
         ModelRegistryHelper.register(sword, wrapped);
         ModelLoader.setCustomMeshDefinition(ModItems.infinity_sword, (ItemStack stack) -> sword);

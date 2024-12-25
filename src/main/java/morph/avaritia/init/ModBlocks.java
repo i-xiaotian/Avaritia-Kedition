@@ -7,6 +7,7 @@ import morph.avaritia.tile.TileDireCraftingTable;
 import morph.avaritia.tile.TileNeutronCollector;
 import morph.avaritia.tile.TileNeutroniumCompressor;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -25,7 +26,8 @@ public class ModBlocks {
 
     public static BlockNeutronCollector neutron_collector;
     public static BlockNeutroniumCompressor neutronium_compressor;
-
+    public static Block gaia_block;
+    public static BlockContainer infinitato;
     public static void init() {
         compressedCraftingTable = registerBlock(new BlockCompressedCraftingTable());
         registerItemBlock(compressedCraftingTable);

@@ -147,7 +147,7 @@ public class AbilityHandler {
                 player.capabilities.allowFlying = true;
                 entitiesWithFlight.add(key);
             } else {
-                if (!player.capabilities.isCreativeMode && entitiesWithFlight.contains(key)) {
+                if (!player.isSpectator() && !player.capabilities.isCreativeMode && entitiesWithFlight.contains(key)) {
                     player.capabilities.allowFlying = false;
                     player.capabilities.isFlying = false;
                     entitiesWithFlight.remove(key);

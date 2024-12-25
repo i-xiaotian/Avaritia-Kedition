@@ -9,6 +9,7 @@ import morph.avaritia.client.render.entity.RenderGapingVoid;
 import morph.avaritia.client.render.entity.RenderHeavenArrow;
 import morph.avaritia.client.render.entity.WrappedEntityItemRenderer;
 import morph.avaritia.client.render.shader.ShaderHelper;
+import morph.avaritia.compat.CompatClient;
 import morph.avaritia.entity.EntityEndestPearl;
 import morph.avaritia.entity.EntityGapingVoid;
 import morph.avaritia.entity.EntityHeavenArrow;
@@ -31,6 +32,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -43,17 +45,13 @@ public class ProxyClient extends Proxy {
 
     //@formatter:off
     public static final int[] SINGULARITY_COLOURS_FOREGROUND = new int[] {
-            0xE6E7E8, 0xE8EF23, 0x5a82e2, 0xDF0000,
-            0xffffff, 0xE47200, 0xA5C7DE, 0x444072,
-            0xC0C0C0, 0xDEE187, 0x45ACA5, 0x5CBE34,
-            0xD62306, 0x00BFFF, 0xE6E6FA
+            0xBFBFBF, 0xE8EF23, 0x5a82e2, 0xDF0000, 0xeeebe6, 0xE47200,
+            0xA5C7DE, 0x444072, 0xF9F9F9, 0xDEE187, 0x8890AD
     };
 
     public static final int[] SINGULARITY_COLOURS_BACKGROUND = new int[] {
-            0x7F7F7F, 0xdba213, 0x224baf, 0x900000,
-            0x94867d, 0x89511A, 0x9BA9B2, 0x3E3D4E,
-            0xD5D5D5, 0xC4C698, 0x8fcdc9, 0x8cd170,
-            0xfffc95, 0x5a82e2, 0xE6E6FA
+            0x7F7F7F, 0xdba213, 0x224baf, 0x900000, 0x94867d, 0x89511A,
+            0x9BA9B2, 0x3E3D4E, 0xD5D5D5, 0xC4C698, 0x666B7F
     };
 
     public static final int[][] SINGULARITY_COLOURS = new int[][] {
@@ -169,15 +167,24 @@ public class ProxyClient extends Proxy {
                 return empty;
             });
         }
+
+
+        CompatClient.earlyComprettify();
         registerRenderers();
         PacketCustom.assignHandler(NetworkDispatcher.NET_CHANNEL, new ClientPacketHandler());
+    }
+
+    @Override
+    public void init(FMLInitializationEvent event){
+        super.init(event);
+        CompatClient.comprettify();
     }
 
     @SuppressWarnings ("unchecked")
     @Override
     public void postInit(FMLPostInitializationEvent event) {
         super.postInit(event);
-
+        CompatClient.lateComprettify();
         ItemColors itemColors = Minecraft.getMinecraft().getItemColors();
         itemColors.registerItemColorHandler((stack, tintIndex) -> SINGULARITY_COLOURS[tintIndex ^ 1][stack.getItemDamage()], ModItems.singularity);
 

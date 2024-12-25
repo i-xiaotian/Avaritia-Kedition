@@ -27,14 +27,18 @@ public class ConfigHandler {
     public static boolean lead = true;
     public static boolean steel = true;
     public static boolean nickel = true;
-    public static boolean fluxed = true;
     public static boolean enderium = true;
     public static boolean darkSteel = true;
-    public static boolean platinum = true;
-    public static boolean iridium = true;
-
+    public static boolean clay = true;
     public static int modifier = 0;
     public static int multiplier = 0;
+
+    public static boolean ae2 = true;
+    public static boolean thaumic = true;
+    public static boolean botan = true;
+    public static boolean blood = true;
+    public static boolean te = true;
+    public static boolean forestry = true;
 
 //    public static boolean storagedrawers = false;
 //    public static boolean refinedstorage = false;
@@ -109,11 +113,21 @@ public class ConfigHandler {
             lead = materials.getTag("lead").setDefaultBoolean(true).getBoolean();
             nickel = materials.getTag("nickel").setDefaultBoolean(true).getBoolean();
             steel = materials.getTag("steel").setDefaultBoolean(true).getBoolean();
-            fluxed = materials.getTag("fluxed").setDefaultBoolean(true).getBoolean();
             enderium = materials.getTag("enderium").setDefaultBoolean(true).getBoolean();
             darkSteel = materials.getTag("dark_steel").setDefaultBoolean(true).getBoolean();
-            platinum = materials.getTag("platinum").setDefaultBoolean(false).getBoolean();
-            iridium = materials.getTag("iridium").setDefaultBoolean(false).getBoolean();
+            clay = materials.getTag("clay").setDefaultBoolean(true).getBoolean();
+        }
+
+        {
+            ConfigTag materials = config.getTag("compat");
+            materials.setComment("Disable to stop compat with other mods");
+
+            ae2 = materials.getTag("ae2").setDefaultBoolean(true).getBoolean();
+            thaumic = materials.getTag("thaumic").setDefaultBoolean(true).getBoolean();
+            botan = materials.getTag("botan").setDefaultBoolean(true).getBoolean();
+            blood = materials.getTag("blood").setDefaultBoolean(true).getBoolean();
+            te = materials.getTag("te").setDefaultBoolean(true).getBoolean();
+            forestry = materials.getTag("forestry").setDefaultBoolean(true).getBoolean();
         }
 
         {

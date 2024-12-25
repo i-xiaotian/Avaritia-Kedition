@@ -46,7 +46,7 @@ public class ItemBowInfinity extends Item implements ICosmicRenderItem, IModelRe
         maxStackSize = 1;
         setMaxDamage(9999);
         setCreativeTab(Avaritia.tab);
-        setUnlocalizedName("avaritia:infinity_bow");
+        setTranslationKey("avaritia:infinity_bow");
         setRegistryName("infinity_bow");
     }
 

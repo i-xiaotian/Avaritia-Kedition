@@ -38,7 +38,7 @@ public class Allele implements IAllele {
     }
 
     @Override
-    public String getUnlocalizedName(){
+    public String getTranslationKey(){
         return name;
     }
 

@@ -103,7 +103,7 @@ public enum GreedyBeeSpecies implements IAlleleBeeSpecies {
     }
 
     @Override
-    public String getUnlocalizedName(){
+    public String getTranslationKey(){
         return "avaritia.bee." + name;
     }
 

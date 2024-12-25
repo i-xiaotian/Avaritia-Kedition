@@ -38,10 +38,7 @@ public class ModItems {
      * 6 = Tin,
      * 7 = Lead,
      * 8 = Silver,
-     * 9 = Nickel,
-     * 10 = Diamond,
-     * 11 = Emerald
-     * 12 = Fluxed
+     * 9 = Nickel
      */
     public static ItemSingularity singularity;
 
@@ -77,11 +74,7 @@ public class ModItems {
     public static ItemStack leadSingularity;
     public static ItemStack silverSingularity;
     public static ItemStack nickelSingularity;
-    public static ItemStack diamondSingularity;
-    public static ItemStack emeraldSingularity;
-    public static ItemStack fluxedSingularity;
-    public static ItemStack platinumSingularity;
-    public static ItemStack iridiumSingularity;
+    public static ItemStack claySingularity;
 
     public static ItemStack diamond_lattice;
     public static ItemStack crystal_matrix_ingot;
@@ -92,6 +85,14 @@ public class ModItems {
     public static ItemStack infinity_ingot;
     public static ItemStack record_fragment;
 
+    public static Item extremely_primordial_pearl;
+
+    public static Item akashic_record;
+
+    public static Item crystal_studded_cosmic_neutronium_caster;
+    public static Item morvInABox;
+
+    public static Item armok_orb;
     public static void init() {
 
         resource = registerItem(new ItemResource(Avaritia.tab, "resource"));
@@ -123,11 +124,7 @@ public class ModItems {
         leadSingularity = singularity.registerItem("lead");
         silverSingularity = singularity.registerItem("silver");
         nickelSingularity = singularity.registerItem("nickel");
-        diamondSingularity = singularity.registerItem("diamond");
-        emeraldSingularity = singularity.registerItem("emerald");
-        fluxedSingularity = singularity.registerItem("fluxed");
-        platinumSingularity = singularity.registerItem("platinum");
-        iridiumSingularity = singularity.registerItem("iridium");
+        claySingularity = singularity.registerItem("clay");
 
         infinity_sword = registerItem(new ItemSwordInfinity());
 
@@ -142,19 +139,19 @@ public class ModItems {
         infinity_hoe = registerItem(new ItemHoeInfinity());
 
         infinity_helmet = new ItemArmorInfinity(EntityEquipmentSlot.HEAD);
-        infinity_helmet.setUnlocalizedName("avaritia:infinity_helmet");
+        infinity_helmet.setTranslationKey("avaritia:infinity_helmet");
         registerItem(infinity_helmet.setRegistryName("infinity_helmet"));
 
         infinity_chestplate = new ItemArmorInfinity(EntityEquipmentSlot.CHEST);
-        infinity_chestplate.setUnlocalizedName("avaritia:infinity_chestplate");
+        infinity_chestplate.setTranslationKey("avaritia:infinity_chestplate");
         registerItem(infinity_chestplate.setRegistryName("infinity_chestplate"));
 
         infinity_pants = new ItemArmorInfinity(EntityEquipmentSlot.LEGS);
-        infinity_pants.setUnlocalizedName("avaritia:infinity_pants");
+        infinity_pants.setTranslationKey("avaritia:infinity_pants");
         registerItem(infinity_pants.setRegistryName("infinity_pants"));
 
         infinity_boots = new ItemArmorInfinity(EntityEquipmentSlot.FEET);
-        infinity_boots.setUnlocalizedName("avaritia:infinity_boots");
+        infinity_boots.setTranslationKey("avaritia:infinity_boots");
         registerItem(infinity_boots.setRegistryName("infinity_boots"));
 
         skull_sword = registerItem(new ItemSwordSkulls());
@@ -163,11 +160,11 @@ public class ModItems {
 
         ultimate_stew = new ItemFood(20, 20, false);
         registerItem(ultimate_stew.setRegistryName("ultimate_stew"));
-        ultimate_stew.setPotionEffect(new PotionEffect(MobEffects.REGENERATION, 300, 1), 1.0F).setUnlocalizedName("avaritia:ultimate_stew").setCreativeTab(Avaritia.tab);
+        ultimate_stew.setPotionEffect(new PotionEffect(MobEffects.REGENERATION, 300, 1), 1.0F).setTranslationKey("avaritia:ultimate_stew").setCreativeTab(Avaritia.tab);
 
         cosmic_meatballs = new ItemFood(20, 20, false);
         registerItem(cosmic_meatballs.setRegistryName("cosmic_meatballs"));
-        cosmic_meatballs.setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 300, 1), 1.0F).setUnlocalizedName("avaritia:cosmic_meatballs").setCreativeTab(Avaritia.tab);
+        cosmic_meatballs.setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 300, 1), 1.0F).setTranslationKey("avaritia:cosmic_meatballs").setCreativeTab(Avaritia.tab);
 
         if (ConfigHandler.fracturedOres) {
             fractured_ore = registerItem(new ItemFracturedOre());

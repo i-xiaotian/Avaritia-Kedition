@@ -31,6 +31,10 @@ public class Lumberjack {
         big(level, 8, format, data);
     }
 
+    public static void info(Object message) {
+        log(Level.INFO, message);
+    }
+
     public static void big(Level level, int lines, String format, Object... data) {
         StackTraceElement[] trace = Thread.currentThread().getStackTrace();
         log(level, "****************************************");

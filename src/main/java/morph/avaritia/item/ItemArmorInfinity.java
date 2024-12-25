@@ -22,12 +22,19 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import thaumcraft.api.items.IGoggles;
+import thaumcraft.api.items.IVisDiscountGear;
 
 import java.util.List;
 
-public class ItemArmorInfinity extends ItemArmor {
+@Mod.EventBusSubscriber(modid = Avaritia.MOD_ID)
+@Optional.Interface(iface = "thaumcraft.api.items.IVisDiscountGear", modid = "thaumcraft")
+@Optional.Interface(iface = "thaumcraft.api.items.IGoggles",modid = "thaumcraft")
+public class ItemArmorInfinity extends ItemArmor implements IVisDiscountGear, IGoggles {
 
     public static final ArmorMaterial infinite_armor = EnumHelper.addArmorMaterial("avaritia_infinity", "", 9999, new int[] { 6, 16, 12, 6 }, 1000, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F);
     public final EntityEquipmentSlot slot;
@@ -77,6 +84,12 @@ public class ItemArmorInfinity extends ItemArmor {
     }
 
     @Override
+    @Optional.Method(modid = "thaumcraft")
+    public int getVisDiscount(ItemStack itemStack, EntityPlayer entityPlayer) {
+        return 20;
+    }
+
+    @Override
     public EnumRarity getRarity(ItemStack stack) {
         return ModItems.COSMIC_RARITY;
     }
@@ -92,6 +105,7 @@ public class ItemArmorInfinity extends ItemArmor {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         if (slot == EntityEquipmentSlot.FEET) {
             tooltip.add("");
@@ -106,4 +120,9 @@ public class ItemArmorInfinity extends ItemArmor {
         return false;
     }
 
+    @Override
+    @Optional.Method(modid = "thaumcraft")
+    public boolean showIngamePopups(ItemStack itemStack, EntityLivingBase entityLivingBase) {
+        return true;
+    }
 }

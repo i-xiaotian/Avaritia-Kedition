@@ -84,9 +84,9 @@ public class ItemComb extends Item {
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
+    public String getTranslationKey(ItemStack stack) {
         int i = MathHelper.clamp_int(stack.getItemDamage(), 0, types.length);
-        return super.getUnlocalizedName() + "." + types[i];
+        return super.getTranslationKey() + "." + types[i];
     }
 
 }

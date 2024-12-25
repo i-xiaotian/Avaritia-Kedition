@@ -59,6 +59,27 @@
 					"layer0": "items/endest_pearl/layer_0"
 				}
 			},
+			"extremely_primordial_pearl": {
+				"textures": {
+					"layer0": "items/big_pearl"
+				}
+			},
+			"armok_orb": {
+				"textures": {
+					"layer0": "items/orb_armok"
+				}
+			},
+			"akashic_record": {
+				"textures": {
+					"layer0": "items/akashic_record"
+				}
+			},
+			"morv_in_a_box": {
+				"textures": {
+					"layer0": "items/morvinabox",
+					"layer1": "items/morvinabox2"
+				}
+			},
 			"ultimate_stew": {
 				"textures": {
 					"layer0": "items/ultimate_stew/layer_0"

@@ -7,24 +7,8 @@
 	},
 	"ingredients": [
 		{
-			"type": "minecraft:item",
-			"item": "#diamond_lattice"
-		},
-		{
-			"type": "minecraft:item",
-			"item": "#crystal_matrix_ingot"
-		},
-		{
-			"type": "minecraft:item",
-			"item": "#neutron_pile"
-		},
-		{
-			"type": "minecraft:item",
-			"item": "#neutron_nugget"
-		},
-		{
-			"type": "minecraft:item",
-			"item": "#neutronium_ingot"
+			"type": "forge:ore_dict",
+			"ore": "blockEmerald"
 		},
 		{
 			"type": "minecraft:item",
@@ -63,12 +47,57 @@
 			"item": "#quartz_singularity"
 		},
 		{
-			"type": "minecraft:item",
-			"item": "#diamond_singularity"
+			"type": "codechickenlib:conditional",
+			"conditions": [
+				{
+					"type": "avaritia:mod_exists",
+					"mod": "thaumcraft"
+				}
+			],
+			"pass": {
+				"type": "minecraft:item",
+				"item": "avaritia:extremely_primordial_pearl"
+			}
 		},
 		{
-			"type": "minecraft:item",
-			"item": "#emerald_singularity"
+			"type": "codechickenlib:conditional",
+			"conditions": [
+				{
+					"type": "codechickenlib:ore_exists",
+					"ore": "eternalLifeEssence"
+				}
+			],
+			"pass": {
+				"type": "forge:ore_dict",
+				"ore": "eternalLifeEssence"
+			}
+		},
+		{
+			"type": "codechickenlib:conditional",
+			"conditions": [
+				{
+					"type": "avaritia:mod_exists",
+					"mod": "botania"
+				}
+			],
+			"pass": {
+				"type": "minecraft:item",
+				"item": "botania:storage",
+				"data": 1
+			}
+		},
+		{
+			"type": "codechickenlib:conditional",
+			"conditions": [
+				{
+					"type": "codechickenlib:ore_exists",
+					"ore": "ingotIchorium"
+				}
+			],
+			"pass": {
+				"type": "forge:ore_dict",
+				"ore": "ingotIchorium"
+			}
 		},
 		{
 			"type": "codechickenlib:conditional",
@@ -159,17 +188,17 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
-					"ore": "blockElectrumFlux"
+					"type": "avaritia:mod_exists",
+					"mod": "botania"
 				},
 				{
 					"type": "avaritia:config",
-					"tag": "materials.fluxed"
+					"tag": "materials.clay"
 				}
 			],
 			"pass": {
 				"type": "minecraft:item",
-				"item": "#fluxed_singularity"
+				"item": "#clay_singularity"
 			}
 		},
 		{
@@ -221,40 +250,6 @@
 			"pass": {
 				"type": "forge:ore_dict",
 				"ore": "blockDarkSteel"
-			}
-		},
-		{
-			"type": "codechickenlib:conditional",
-			"conditions": [
-				{
-					"type": "codechickenlib:ore_exists",
-					"ore": "blockPlatinum"
-				},
-				{
-					"type": "avaritia:config",
-					"tag": "materials.platinum"
-				}
-			],
-			"pass": {
-				"type": "minecraft:item",
-				"item": "#platinum_singularity"
-			}
-		},
-		{
-			"type": "codechickenlib:conditional",
-			"conditions": [
-				{
-					"type": "codechickenlib:ore_exists",
-					"ore": "blockIridium"
-				},
-				{
-					"type": "avaritia:config",
-					"tag": "materials.iridium"
-				}
-			],
-			"pass": {
-				"type": "minecraft:item",
-				"item": "#iridium_singularity"
 			}
 		}
 	]

@@ -36,12 +36,12 @@ public class TileBase extends TileEntity {
     @Override
     public void markDirty() {
         super.markDirty();
-        if (getWorld() != null) {
+        /*if (getWorld() != null) {
             IBlockState state = getWorld().getBlockState(pos);
             if (state != null) {
                 state.getBlock().updateTick(getWorld(), getPos(), state, getWorld().rand);
                 getWorld().notifyBlockUpdate(pos, state, state, 3);
             }
-        }
+        }*/
     }
 }

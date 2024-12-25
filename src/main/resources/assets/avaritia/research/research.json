@@ -1,0 +1,80 @@
+{
+  "entries": [
+    {
+      "key": "BIG_PEARL",
+      "name": "avaritia.research.big_pearl.title",
+        "category": "BASICS",
+      "meta": [
+        "ROUND", "HIDDEN"
+      ],
+        "icons": [
+          "avaritia:extremely_primordial_pearl"
+        ],
+        "parents": [
+           "PRIMPEARL"
+        ],
+        "location": [
+          -9, 6
+        ],
+        "stages": [
+          {
+            "text": "avaritia.research.big_pearl.text",
+            "required_research":["!terminus"],
+            "required_knowledge": [
+              "THEORY;BASICS;6",
+              "THEORY;ALCHEMY;6",
+              "THEORY;AUROMANCY;6",
+              "THEORY;ARTIFICE;6",
+              "THEORY;INFUSION;6",
+              "THEORY;ELDRITCH;6"
+            ]
+          },
+          {
+            "text": "avaritia.research.big_pearl.complete.text",
+            "recipes": ["avaritia:big_pearl"],
+            "warp": 3
+          }
+        ]
+      },
+    {
+      "key": "AKASHIC_RECORD",
+      "name": "avaritia.research.akashicrecord.title",
+      "category": "BASICS",
+      "icons": [
+        "avaritia:akashic_record"
+      ],
+      "meta": [
+        "ROUND", "HIDDEN"
+      ],
+      "parents": [
+        "PRIMPEARL"
+      ],
+      "location": [
+        -7, 6
+      ],
+      "stages": [
+        {
+          "text": "avaritia.research.akashicrecord.text",
+          "required_research":["!terminus"],
+          "required_knowledge": [
+            "OBSERVATION;BASICS;1",
+            "OBSERVATION;ALCHEMY;1",
+            "OBSERVATION;AUROMANCY;1",
+            "OBSERVATION;ARTIFICE;1",
+            "OBSERVATION;INFUSION;1",
+            "OBSERVATION;ELDRITCH;1"
+          ],
+          "required_item": [
+            "thaumcraft:curio;1;0", "thaumcraft:curio;1;1", "thaumcraft:curio;1;2", "thaumcraft:curio;1;3", "thaumcraft:curio;1;4", "thaumcraft:curio;1;5"
+          ]
+        },
+        {
+          "text": "avaritia.research.akashicrecord.complete.text",
+          "recipes": [
+            "avaritia:akashic_record"
+          ]
+        }
+      ]
+    }
+  ]
+}

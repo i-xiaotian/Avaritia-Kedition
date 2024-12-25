@@ -216,43 +216,11 @@
 		}
 	},
 	{
-		"name": "diamond_singularity",
+		"name": "clay_singularity",
 		"ingredient": {
 			"type": "minecraft:item",
 			"item": "avaritia:singularity",
 			"data": 10
-		}
-	},
-	{
-		"name": "emerald_singularity",
-		"ingredient": {
-			"type": "minecraft:item",
-			"item": "avaritia:singularity",
-			"data": 11
-		}
-	},
-	{
-		"name": "fluxed_singularity",
-		"ingredient": {
-			"type": "minecraft:item",
-			"item": "avaritia:singularity",
-			"data": 12
-		}
-	},
-	{
-		"name": "platinum_singularity",
-		"ingredient": {
-			"type": "minecraft:item",
-			"item": "avaritia:singularity",
-			"data": 13
-		}
-	},
-	{
-		"name": "iridium_singularity",
-		"ingredient": {
-			"type": "minecraft:item",
-			"item": "avaritia:singularity",
-			"data": 14
 		}
 	}
 ]
