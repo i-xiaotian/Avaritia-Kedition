@@ -12,10 +12,12 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import thaumcraft.api.capabilities.IPlayerKnowledge;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 import thaumcraft.api.research.ResearchEntry;
 import thaumcraft.common.lib.CommandThaumcraft;
+import thaumcraft.common.lib.research.ResearchManager;
 
 import java.util.Collection;
 
@@ -33,12 +35,8 @@ public class ItemAkashicRecord extends Item implements IModelRegister {
         if(!world.isRemote) {
             Collection<ResearchCategory> rc = ResearchCategories.researchCategories.values();
             for (ResearchCategory cat : rc) {
-                Collection<ResearchEntry> rl = cat.research.values();
-                for (ResearchEntry ri : rl) {
-                    CommandThaumcraft.giveRecursiveResearch(player, ri.getKey());
-                    if(!player.capabilities.isCreativeMode)
-                        player.getHeldItem(hand).setCount(player.getHeldItem(hand).getCount() - 1);
-                }
+                ResearchManager.addKnowledge(player, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, cat, 999);
+                ResearchManager.addKnowledge(player, IPlayerKnowledge.EnumKnowledgeType.THEORY, cat, 999);
             }
         }
 

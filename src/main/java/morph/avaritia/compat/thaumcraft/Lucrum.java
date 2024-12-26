@@ -5,6 +5,7 @@ import morph.avaritia.compat.Compat;
 import morph.avaritia.init.ModBlocks;
 import morph.avaritia.init.ModItems;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -31,14 +32,14 @@ public class Lucrum {
                 new ItemStack(ModItems.extremely_primordial_pearl),
                 12,
                 new AspectList().add(Aspect.AIR, 250).add(Aspect.FIRE, 250).add(Aspect.WATER, 250).add(Aspect.EARTH, 250).add(Aspect.ORDER, 250).add(Aspect.ENTROPY, 250).add(Aspect.MAGIC, 250).add(Aspect.ELDRITCH, 250).add(ULTRA_DEATH, 125),
-                new ItemStack(ItemsTC.primordialPearl),
-                new ItemStack(ItemsTC.primordialPearl),
-                new ItemStack(ItemsTC.primordialPearl),
-                new ItemStack(ItemsTC.primordialPearl),
-                new ItemStack(ItemsTC.primordialPearl),
-                new ItemStack(ItemsTC.primordialPearl),
-                new ItemStack(ItemsTC.primordialPearl),
-                new ItemStack(ItemsTC.primordialPearl)
+                Ingredient.fromItem(ItemsTC.primordialPearl),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
+                Ingredient.fromItem(ItemsTC.primordialPearl)
         ));
 
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(Avaritia.MOD_ID, "akashic_record"), new InfusionRecipe(
