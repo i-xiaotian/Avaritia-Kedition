@@ -5,7 +5,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
@@ -18,7 +17,6 @@ import uk.kihira.tails.client.render.RenderPart;
 import uk.kihira.tails.common.PartInfo;
 import uk.kihira.tails.common.PartsData;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 public class InfiniteFoxes {

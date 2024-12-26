@@ -2,6 +2,7 @@ package morph.avaritia.compat.botania;
 
 import morph.avaritia.Avaritia;
 import morph.avaritia.compat.Compat;
+import static morph.avaritia.init.ModBlocks.*;
 import morph.avaritia.init.ModItems;
 import morph.avaritia.recipe.ExtremeCraftingManager;
 import morph.avaritia.recipe.extreme.ExtremeShapedRecipe;
@@ -14,8 +15,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.recipe.RecipeRuneAltar;
 import vazkii.botania.common.block.ModBlocks;
-
-import static morph.avaritia.init.ModBlocks.*;
 
 public class Tsundere {
 
@@ -54,9 +53,9 @@ public class Tsundere {
                 "nnnnNnnnn",
                 " nn N nn ",
                 "    N    ",
-                'I', new ItemStack(ModItems.resource, 1, 6),
+                'I', "ingotInfinity",
                 'X', new ItemStack(ModItems.resource, 1, 5),
-                'N', new ItemStack(ModItems.resource, 1, 4),
+                'N', "ingotCosmicNeutronium",
                 'n', new ItemStack(ModItems.resource, 1, 3));
 
         ItemStack chicken = getFlower("soarleander");

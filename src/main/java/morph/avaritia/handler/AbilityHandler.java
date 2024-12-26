@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import static net.minecraft.inventory.EntityEquipmentSlot.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
@@ -17,8 +18,6 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Predicate;
-
-import static net.minecraft.inventory.EntityEquipmentSlot.*;
 
 /**
  * Handles all abilities for ANY EntityLivingBase.

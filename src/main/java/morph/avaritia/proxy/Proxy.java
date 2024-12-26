@@ -5,6 +5,7 @@ import morph.avaritia.Avaritia;
 import morph.avaritia.api.registration.IModelRegister;
 import morph.avaritia.client.gui.GUIHandler;
 import morph.avaritia.compat.Compat;
+import static morph.avaritia.compat.Compat.*;
 import morph.avaritia.compat.bloodmagic.Bloody;
 import morph.avaritia.compat.botania.InfiniteFoxes;
 import morph.avaritia.compat.botania.Tsundere;
@@ -37,8 +38,6 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import org.apache.logging.log4j.Level;
 
 import java.util.UUID;
-
-import static morph.avaritia.compat.Compat.*;
 
 public class Proxy {
 
@@ -139,7 +138,7 @@ public class Proxy {
                         "IIIIRIIII",
                         'X', new ItemStack(ModBlocks.resource, 1, 1),
                         'E', "blockEnderium",
-                        'I', new ItemStack(ModItems.resource, 1, 6),
+                        'I', "ingotInfinity",
                         'R', new ItemStack(ModItems.singularity, 1, 3));
             }
             catch (Throwable e){
@@ -167,7 +166,7 @@ public class Proxy {
                         "IIIIDIIII",
                         'D', new ItemStack(resource, 1, 24),
                         'E', new ItemStack(dense, 1, 0),
-                        'I', new ItemStack(ModItems.resource, 1, 6));
+                        'I', "ingotInfinity");
             }
             catch (Throwable e){
                 Lumberjack.log(Level.INFO, "Avaritia couldn't figure out how channels work.");

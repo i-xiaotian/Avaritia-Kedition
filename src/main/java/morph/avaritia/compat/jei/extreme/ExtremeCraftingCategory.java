@@ -9,14 +9,13 @@ import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.IRecipeCategory;
 import morph.avaritia.Avaritia;
 import morph.avaritia.compat.jei.AvaritiaJEIPlugin;
+import static morph.avaritia.compat.jei.AvaritiaJEIPlugin.EXTREME_CRAFTING;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
 import java.util.Collections;
 import java.util.List;
-
-import static morph.avaritia.compat.jei.AvaritiaJEIPlugin.EXTREME_CRAFTING;
 
 /**
  * Created by brandon3055 on 17/02/2017.

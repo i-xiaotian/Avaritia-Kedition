@@ -32,9 +32,9 @@ public class Bloody {
                 "NNNIIINNN",
                 " NNNNNNN ",
                 "   NNN   ",
-                'I', new ItemStack(ModItems.resource, 1, 6),
+                'I', "ingotInfinity",
                 'X', new ItemStack(ModItems.resource, 1, 5),
-                'N', new ItemStack(ModItems.resource, 1, 4),
+                'N', "ingotCosmicNeutronium",
                 'O', archOrb);
     }
 }

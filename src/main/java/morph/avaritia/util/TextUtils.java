@@ -2,7 +2,6 @@ package morph.avaritia.util;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TextFormatting;
-
 import static net.minecraft.util.text.TextFormatting.*;
 
 public class TextUtils {

@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
+import static net.minecraft.util.text.translation.I18n.translateToLocal;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
@@ -19,8 +20,6 @@ import vazkii.botania.client.core.helper.RenderHelper;
 import vazkii.botania.common.lexicon.page.PageRecipe;
 
 import java.util.Arrays;
-
-import static net.minecraft.util.text.translation.I18n.translateToLocal;
 
 public class PageLudicrousRecipe extends PageRecipe {
 

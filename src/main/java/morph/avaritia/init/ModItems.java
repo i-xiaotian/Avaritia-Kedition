@@ -84,15 +84,11 @@ public class ModItems {
     public static ItemStack infinity_catalyst;
     public static ItemStack infinity_ingot;
     public static ItemStack record_fragment;
-
     public static Item extremely_primordial_pearl;
-
     public static Item akashic_record;
-
     public static Item crystal_studded_cosmic_neutronium_caster;
-    public static Item morvInABox;
-
     public static Item armok_orb;
+
     public static void init() {
 
         resource = registerItem(new ItemResource(Avaritia.tab, "resource"));

@@ -4,6 +4,8 @@ import morph.avaritia.Avaritia;
 import morph.avaritia.compat.Compat;
 import morph.avaritia.init.ModBlocks;
 import morph.avaritia.init.ModItems;
+import static morph.avaritia.init.ModItems.registerItem;
+import morph.avaritia.recipe.ExtremeCraftingManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
@@ -13,17 +15,16 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.items.ItemsTC;
 
-import static morph.avaritia.init.ModItems.registerItem;
-
 public class Lucrum {
 
     public static Aspect ULTRA_DEATH;
 
     public static void preInit() throws Compat.ItemNotFoundException {
-        ULTRA_DEATH = new Aspect("terminus", 0xb90000, new Aspect[] { Aspect.DESIRE, Aspect.ELDRITCH }, new ResourceLocation("avaritia", "textures/misc/terminus.png"), 771);
+        ULTRA_DEATH = new Aspect("terminus", 0xb90000, new Aspect[]{Aspect.DESIRE, Aspect.ELDRITCH}, new ResourceLocation("avaritia", "textures/misc/terminus.png"), 771);
 
         ModItems.akashic_record = registerItem(new ItemAkashicRecord());
         ModItems.extremely_primordial_pearl = registerItem(new ItemBigPearl());
+        ModItems.crystal_studded_cosmic_neutronium_caster = registerItem(new ItemCrystalCaster());
     }
 
     public static void init() throws Compat.ItemNotFoundException {
@@ -53,6 +54,21 @@ public class Lucrum {
                 "ingotInfinity",
                 "ingotInfinity"
         ));
+
+        ExtremeCraftingManager.addRecipe(new ItemStack(ModItems.crystal_studded_cosmic_neutronium_caster, 1),
+                "  C C C  ",
+                "  C C C  ",
+                "  CNCNC C",
+                "C CNCNCNC",
+                "CNNXXXNNC",
+                "CCNXIXNC ",
+                " NNXXXNN ",
+                "  NN NN  ",
+                "   NNN   ",
+                'C', "ingotCrystalMatrix",
+                'X', "ingotInfinity",
+                'N', "ingotCosmicNeutronium",
+                'I', new ItemStack(ModItems.resource, 1, 5));
 
         ThaumcraftApi.registerResearchLocation(new ResourceLocation(Avaritia.MOD_ID, "research/research.json"));
     }

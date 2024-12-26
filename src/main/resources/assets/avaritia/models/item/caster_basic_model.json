@@ -1,0 +1,6 @@
+{
+  "parent": "thaumcraft:item/caster_gauntlet",
+  "textures": {
+    "skin": "avaritia:models/crystal_studded_cosmic_neutronium_caster"
+  }
+}

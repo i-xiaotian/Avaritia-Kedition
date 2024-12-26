@@ -3,15 +3,14 @@ package morph.avaritia.compat;
 import morph.avaritia.compat.botania.MiscellaneousIcons;
 import morph.avaritia.compat.botania.RenderTileInfinitato;
 import morph.avaritia.compat.botania.TileInfinitato;
+import static morph.avaritia.init.ModBlocks.gaia_block;
+import static morph.avaritia.init.ModBlocks.infinitato;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import vazkii.botania.api.BotaniaAPIClient;
-
-import static morph.avaritia.init.ModBlocks.gaia_block;
-import static morph.avaritia.init.ModBlocks.infinitato;
 
 public class CompatClient {
 
