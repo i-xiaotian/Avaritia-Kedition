@@ -20,6 +20,7 @@ import org.lwjgl.opengl.GL11;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public final class ShaderHelper {
 
@@ -45,10 +46,12 @@ public final class ShaderHelper {
         ARBShaderObjects.glUseProgramObjectARB(shader);
 
         if (shader != 0) {
-            int time = ARBShaderObjects.glGetUniformLocationARB(shader, "time");
             Minecraft mc = Minecraft.getMinecraft();
+            int time = ARBShaderObjects.glGetUniformLocationARB(shader, "time");
+            int animationTime = mc.player.ticksExisted % 24000;
+
             if (mc.player != null && mc.player.world != null) {
-                ARBShaderObjects.glUniform1iARB(time, (int) (mc.player.world.getWorldTime() % Integer.MAX_VALUE));
+                ARBShaderObjects.glUniform1iARB(time, animationTime <= 12000 ? animationTime : animationTime * -1 + 24000);
             }
 
             if (callback != null) {
@@ -147,7 +150,7 @@ public final class ShaderHelper {
         }
 
         try {
-            reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+            reader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
 
             Exception innerExc = null;
             try {

@@ -14,7 +14,6 @@ public class CompressorBalanceCalculator {
         }
         if (Loader.isModLoaded("tconstruct")) {
             modifier += 100;
-            multiplier += 1;
         }
         if (Loader.isModLoaded("thermalexpansion") || Loader.isModLoaded("ic2") || Loader.isModLoaded("thaumictinkerer")) {
             modifier += 300;
@@ -28,7 +27,7 @@ public class CompressorBalanceCalculator {
         if (Loader.isModLoaded("agricraft")) {
             multiplier += 1;
         }
-        if (Loader.isModLoaded("minefactoryreloaded")) {
+        if (Loader.isModLoaded("industrialforegoing")) {
             multiplier += 3;
         }
         if (Loader.isModLoaded("bigreactors")) {
@@ -54,7 +53,6 @@ public class CompressorBalanceCalculator {
         if (Loader.isModLoaded("mekanism")) {
             modifier += 500;
             multiplier += 1;
-
         }
         if (Loader.isModLoaded("torcherino")) {
             multiplier += 2;
