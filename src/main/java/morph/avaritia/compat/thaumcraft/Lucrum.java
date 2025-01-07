@@ -9,6 +9,7 @@ import morph.avaritia.recipe.ExtremeCraftingManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -25,6 +26,8 @@ public class Lucrum {
         ModItems.akashic_record = registerItem(new ItemAkashicRecord());
         ModItems.extremely_primordial_pearl = registerItem(new ItemBigPearl());
         ModItems.crystal_studded_cosmic_neutronium_caster = registerItem(new ItemCrystalCaster());
+
+        OreDictionary.registerOre("pearlExtreme", ModItems.extremely_primordial_pearl);
     }
 
     public static void init() throws Compat.ItemNotFoundException {

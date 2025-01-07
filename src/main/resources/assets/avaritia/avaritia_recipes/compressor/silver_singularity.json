@@ -11,7 +11,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockSilver"
 				},
 				{

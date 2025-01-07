@@ -55,15 +55,15 @@
 				}
 			],
 			"pass": {
-				"type": "minecraft:item",
-				"item": "avaritia:extremely_primordial_pearl"
+				"type": "forge:ore_dict",
+				"ore": "pearlExtreme"
 			}
 		},
 		{
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "eternalLifeEssence"
 				}
 			],
@@ -90,7 +90,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "ingotIchorium"
 				}
 			],
@@ -103,7 +103,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockCopper"
 				},
 				{
@@ -120,7 +120,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockTin"
 				},
 				{
@@ -137,7 +137,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockLead"
 				},
 				{
@@ -154,7 +154,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockSilver"
 				},
 				{
@@ -171,7 +171,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockNickel"
 				},
 				{
@@ -205,7 +205,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockEnderium"
 				},
 				{
@@ -222,7 +222,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockSteel"
 				},
 				{
@@ -239,7 +239,7 @@
 			"type": "codechickenlib:conditional",
 			"conditions": [
 				{
-					"type": "codechickenlib:ore_exists",
+					"type": "avaritia:ore_exists",
 					"ore": "blockDarkSteel"
 				},
 				{
