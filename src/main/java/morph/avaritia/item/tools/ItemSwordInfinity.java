@@ -11,12 +11,14 @@ import morph.avaritia.handler.AvaritiaEventHandler;
 import morph.avaritia.init.AvaritiaTextures;
 import morph.avaritia.init.ModItems;
 import morph.avaritia.util.DamageSourceInfinitySword;
+import morph.avaritia.util.DamageSourceInfinitySwordOp;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerCapabilities;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -53,11 +55,19 @@ public class ItemSwordInfinity extends ItemSword implements ICosmicRenderItem, I
         }
         if (victim instanceof EntityPlayer) {
             EntityPlayer pvp = (EntityPlayer) victim;
+            final PlayerCapabilities capabilities = pvp.capabilities;
+            if (capabilities.isCreativeMode) {
+                player.recentlyHit = 60;
+                player.getCombatTracker().trackDamage(new DamageSourceInfinitySwordOp(victim), player.getHealth(), player.getHealth());
+                player.setHealth(0);
+                player.onDeath(new EntityDamageSource("infinityop", victim));
+                return true;
+            }
             if (AvaritiaEventHandler.isInfinite(pvp)) {
                 victim.attackEntityFrom(new DamageSourceInfinitySword(player).setDamageBypassesArmor(), 4.0F);
                 return true;
             }
-            if (pvp.getHeldItem(EnumHand.MAIN_HAND) != null && pvp.getHeldItem(EnumHand.MAIN_HAND).getItem() == ModItems.infinity_sword && pvp.isHandActive()) {
+            if (pvp.getHeldItem(EnumHand.MAIN_HAND).getItem() == ModItems.infinity_sword && pvp.isHandActive()) {
                 return true;
             }
         }

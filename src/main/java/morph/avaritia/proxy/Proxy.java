@@ -20,6 +20,7 @@ import morph.avaritia.handler.ConfigHandler;
 import morph.avaritia.init.ModBlocks;
 import morph.avaritia.init.ModItems;
 import morph.avaritia.recipe.ExtremeCraftingManager;
+import morph.avaritia.the_north.capability.InfinityCapabilityManager;
 import morph.avaritia.util.Lumberjack;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -56,6 +57,7 @@ public class Proxy {
         EntityRegistry.registerModEntity(new ResourceLocation("avaritia:heaven_arrow"), EntityHeavenArrow.class, "HeavenArrow", 3, Avaritia.instance, 32, 1, true);
         EntityRegistry.registerModEntity(new ResourceLocation("avaritia:heaven_sub_arrow"), EntityHeavenSubArrow.class, "HeavenSubArrow", 4, Avaritia.instance, 32, 2, true);
 
+        InfinityCapabilityManager.register();
 
         if(Compat.thaumic) {
             try {
